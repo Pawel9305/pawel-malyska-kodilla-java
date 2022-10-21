@@ -30,6 +30,10 @@ public class ShapeCollector {
     }
 
     public String showFigures() {
-       return "Shape list" + shapeList;
+        String result = "";
+        for (Shape shape : shapeList) {
+            result += shape.getShapeName() + ", field = " + shape.getField();
+        }
+       return "Shape list " + result;
     }
 }

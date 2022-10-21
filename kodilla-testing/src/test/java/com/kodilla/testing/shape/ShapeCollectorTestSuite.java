@@ -86,7 +86,9 @@ public class ShapeCollectorTestSuite {
             Circle circle = new Circle("circle", 5.0);
             //When
             shapeCollector.addFigure(circle);
+            String result = circle.getShapeName() + circle.getField();
             //Then
+            assertEquals(shapeCollector.getFigure(0).getShapeName() + shapeCollector.getFigure(0).getField(), result);
             System.out.println(shapeCollector.showFigures());
         }
     }
