@@ -62,7 +62,7 @@ public class ShapeCollectorTestSuite {
             ShapeCollector shapeCollector = new ShapeCollector();
             Circle circle = new Circle("circle", 5.0);
             //When
-            boolean result = shapeCollector.shapeList.remove(circle);
+            boolean result = shapeCollector.removeFigure(circle);
             //Then
             assertFalse(result);
         }
