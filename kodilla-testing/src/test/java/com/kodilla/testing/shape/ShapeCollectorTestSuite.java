@@ -37,8 +37,10 @@ public class ShapeCollectorTestSuite {
             //Given
             ShapeCollector shapeCollector = new ShapeCollector();
             Circle circle = new Circle("circle", 5.0);
+
             //When
             shapeCollector.addFigure(circle);
+
             //Then
             assertEquals(1, shapeCollector.shapeList.size());
         }
@@ -49,8 +51,10 @@ public class ShapeCollectorTestSuite {
             ShapeCollector shapeCollector = new ShapeCollector();
             Circle circle = new Circle("circle", 5.0);
             shapeCollector.addFigure(circle);
+
             //When
             boolean result = shapeCollector.removeFigure(circle);
+
             //Then
             assertTrue(result);
             assertEquals(0, shapeCollector.shapeList.size());
@@ -61,8 +65,10 @@ public class ShapeCollectorTestSuite {
             //Given
             ShapeCollector shapeCollector = new ShapeCollector();
             Circle circle = new Circle("circle", 5.0);
+
             //When
             boolean result = shapeCollector.removeFigure(circle);
+
             //Then
             assertFalse(result);
         }
@@ -73,8 +79,10 @@ public class ShapeCollectorTestSuite {
             ShapeCollector shapeCollector = new ShapeCollector();
             Circle circle = new Circle("circle", 5.0);
             shapeCollector.addFigure(circle);
+
             //When
             Shape retrievedShape = shapeCollector.getFigure(0);
+
             //Then
             assertEquals(circle, retrievedShape);
         }
@@ -84,12 +92,13 @@ public class ShapeCollectorTestSuite {
             //Given
             ShapeCollector shapeCollector = new ShapeCollector();
             Circle circle = new Circle("circle", 5.0);
+
             //When
             shapeCollector.addFigure(circle);
-            String result = circle.getShapeName() + circle.getField();
+
             //Then
-            assertEquals(shapeCollector.getFigure(0).getShapeName() + shapeCollector.getFigure(0).getField(), result);
-            System.out.println(shapeCollector.showFigures());
+            assertEquals(shapeCollector.getFigure(0).getShapeName() + shapeCollector.getFigure(0).getField(),
+                    shapeCollector.showFigures());
         }
     }
 }

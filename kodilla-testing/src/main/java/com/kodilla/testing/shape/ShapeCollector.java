@@ -32,8 +32,8 @@ public class ShapeCollector {
     public String showFigures() {
         String result = "";
         for (Shape shape : shapeList) {
-            result += shape.getShapeName() + ", field = " + shape.getField();
+            result += shape.getShapeName() +  shape.getField();
         }
-       return "Shape list " + result;
+       return result;
     }
 }
