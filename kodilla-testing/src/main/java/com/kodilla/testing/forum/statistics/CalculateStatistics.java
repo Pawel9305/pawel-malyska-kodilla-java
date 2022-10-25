@@ -27,6 +27,7 @@ public class CalculateStatistics {
             }
         }
     }
+
     public int getPostsQuantity() {
         return postsQuantity;
     }
@@ -50,6 +51,7 @@ public class CalculateStatistics {
     public double getAverageCommentsForPost() {
         return averageCommentsForPost;
     }
+
     public void showStatistics() {
         System.out.println("Statistics: " + "\n" + "1.Quantity of users: " + usersQuantity + "\n" +
                 "2.Quantity of posts: " + postsQuantity + "\n" + "3.Quantity of comments: " + commentsQuantity +

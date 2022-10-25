@@ -29,6 +29,7 @@ public class CalculateStatisticsTestSuite {
             System.out.println("Beginning of statistics tests: ");
 
         }
+
         @AfterAll
         public static void afterAllTests() {
             System.out.println("Tests ending.");
