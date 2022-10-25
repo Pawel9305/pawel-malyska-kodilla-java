@@ -27,7 +27,6 @@ public class CalculateStatistics {
             }
         }
     }
-
     public int getPostsQuantity() {
         return postsQuantity;
     }

@@ -4,6 +4,7 @@ import java.util.List;
 
 public interface Statistics {
 
+
     List<String> usersNames();      //lists of users names
 
     int postsCount();               //total quantity of forum posts
