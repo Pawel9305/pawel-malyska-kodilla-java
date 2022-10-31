@@ -5,10 +5,11 @@ import org.junit.jupiter.api.Test;
 import static java.util.stream.Collectors.*;
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import java.util.stream.DoubleStream;
 
 
 public class BoardTestSuite {
@@ -153,13 +154,13 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
-        var averageOfDays = Arrays.stream(project.getTaskLists().stream()
+        var averageOfDays = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(Task::getCreated)
                 .filter(date -> date.isBefore(LocalDate.now()))
-                .mapToDouble(d -> LocalDate.now().compareTo(d))
-                .toArray())
+                .map(d -> Period.between(d, LocalDate.now())).toList().stream()
+                .mapToInt(Period::getDays)
                 .average().getAsDouble();
 
         //Then
