@@ -1,6 +1,5 @@
 package com.kodilla.testing.shape;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +21,7 @@ public class ShapeCollector {
         return result;
     }
 
-    public Shape getFigure (int n) {
+    public Shape getFigure(int n) {
         if (n >= 0 && n < shapeList.size()) {
             return shapeList.get(n);
         }
@@ -32,8 +31,8 @@ public class ShapeCollector {
     public String showFigures() {
         String result = "";
         for (Shape shape : shapeList) {
-            result += shape.getShapeName() +  shape.getField();
+            result += shape.getShapeName() + shape.getField();
         }
-       return result;
+        return result;
     }
 }

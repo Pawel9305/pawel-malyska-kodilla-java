@@ -1,12 +1,8 @@
 package com.kodilla.testing.shape;
 
 import org.junit.jupiter.api.*;
-import  static org.junit.jupiter.api.Assertions.*;
-import com.kodilla.testing.shape.Shape;
-import com.kodilla.testing.shape.ShapeCollector;
-import com.kodilla.testing.shape.Circle;
-import com.kodilla.testing.shape.Square;
-import com.kodilla.testing.shape.Triangle;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("TDD: Shape Collector Test Suite")
 public class ShapeCollectorTestSuite {
