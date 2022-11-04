@@ -1,8 +1,6 @@
 package com.kodilla.testing.shape;
 
-import java.util.Objects;
-
-public class Circle implements Shape{
+public class Circle implements Shape {
 
     private String name;
     private double r;
