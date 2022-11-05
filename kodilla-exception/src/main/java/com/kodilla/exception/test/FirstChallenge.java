@@ -20,6 +20,5 @@ public class FirstChallenge {
         } catch(ArithmeticException e) {
             System.err.println("Cannot be divided by 0!");
         }
-
     }
 }
