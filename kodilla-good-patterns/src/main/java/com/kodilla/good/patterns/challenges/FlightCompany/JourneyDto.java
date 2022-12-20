@@ -1,14 +1,16 @@
 package com.kodilla.good.patterns.challenges.FlightCompany;
 
 
-public class JourneyDto {
-    private Flight flight;
+import java.util.List;
 
-    public JourneyDto(final Flight flight) {
-        this.flight = flight;
+public class JourneyDto {
+    private List<Flight> journey;
+
+    public JourneyDto(final List<Flight> journey) {
+        this.journey = journey;
     }
 
-    public Flight getFlight() {
-        return flight;
+    public List<Flight> getJourney() {
+        return journey;
     }
 }

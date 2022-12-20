@@ -3,7 +3,6 @@ package com.kodilla.good.patterns.challenges.FlightCompany;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class FlightFinder implements TransportationFinder {
 
@@ -39,15 +38,18 @@ public class FlightFinder implements TransportationFinder {
                 .toList();
     }
 
-    public List<Flight> findWithStopover(String departure, String arrival) {
-        return retrieveFlights().stream()
-                .filter(flight -> flight.getDepartureAirport().equalsIgnoreCase(departure)
-                        || flight.getArrivalAirport().equalsIgnoreCase(arrival))
-                .collect(Collectors.toList());
-    }
+    public List<Tuple> findWithStopover(String departure, String arrival) {
+        List<Flight> firstFlight = retrieveFlights().stream()
+                .filter(flight -> flight.getDepartureAirport().equalsIgnoreCase(departure)).toList();
 
-    public static void main(String[] args) {
-        FlightFinder flightFinder = new FlightFinder();
-        flightFinder.findWithStopover("Lublin", "Gdańsk");
+        List<Flight> secondFlight = retrieveFlights().stream()
+                .filter(flight -> flight.getArrivalAirport().equalsIgnoreCase(arrival)).toList();
+
+        return firstFlight.stream()
+                .filter(ff -> secondFlight.stream()
+                        .anyMatch(sf -> sf.getDepartureAirport().equalsIgnoreCase(ff.getArrivalAirport())))
+                .map(ff2 ->
+                        new Tuple(ff2, secondFlight.stream().filter(sf -> sf.getDepartureAirport()
+                                .equalsIgnoreCase(ff2.getArrivalAirport())).findAny().get())).toList();
     }
 }

@@ -4,5 +4,4 @@ import java.util.List;
 
 public interface TransportationRepository {
     List<Flight> createRoute(List<Flight> route);
-
 }
